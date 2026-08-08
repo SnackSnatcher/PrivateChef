@@ -34,10 +34,19 @@ async function passedTurnstile(token, ip, secret) {
     { method: "POST", body }
   );
   const outcome = await verify.json();
+  if (!outcome.success) {
+    console.error("Turnstile rejected the token:", outcome["error-codes"]);
+  }
   return outcome.success === true;
 }
 
 async function handleContact(request, env) {
+  const missing = ["TURNSTILE_SECRET_KEY", "RESEND_API_KEY", "MAIL_TO", "MAIL_FROM"]
+    .filter((key) => !env[key]);
+  if (missing.length) {
+    console.error("Missing environment variables:", missing.join(", "));
+  }
+
   let form;
   try {
     form = await request.formData();
