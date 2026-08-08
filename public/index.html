@@ -402,8 +402,21 @@
 
       button[disabled] {
         background: var(--brass-dim);
-        color: rgba(255, 255, 255, 0.72);
+        color: rgba(255, 255, 255, 0.78);
         cursor: progress;
+      }
+
+      .spinner {
+        width: 13px;
+        height: 13px;
+        border: 2px solid rgba(255, 255, 255, 0.34);
+        border-top-color: rgba(255, 255, 255, 0.92);
+        border-radius: 50%;
+        animation: spin 0.62s linear infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
       }
 
       .status {
@@ -465,6 +478,10 @@
       }
 
       @media (prefers-reduced-motion: reduce) {
+        .spinner {
+          animation-duration: 1.6s;
+        }
+
         .rise,
         .enquiry {
           opacity: 1;
@@ -626,7 +643,7 @@
           event.preventDefault();
           say("", "");
           button.disabled = true;
-          button.textContent = "Sending";
+          button.innerHTML = '<span class="spinner" aria-hidden="true"></span>Sending';
 
           try {
             var response = await fetch("/api/contact", {
