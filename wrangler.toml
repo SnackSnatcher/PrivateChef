@@ -13,6 +13,3 @@ not_found_handling = "404-page"
 #   RESEND_API_KEY
 #   MAIL_TO
 #   MAIL_FROM
-
-[observability]
-enabled = true

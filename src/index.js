@@ -72,13 +72,13 @@ async function handleContact(request, env) {
 
   const token = clean(form.get("cf-turnstile-response"), 2048);
   if (!token) {
-    return json({ error: "Complete the verification box, then send again." }, 400);
+    return json({ error: "Verification hasn't finished. Wait a moment, then send again." }, 400);
   }
 
   const ip = request.headers.get("CF-Connecting-IP") || "";
   const verified = await passedTurnstile(token, ip, env.TURNSTILE_SECRET_KEY);
   if (!verified) {
-    return json({ error: "Verification failed. Tick the box and send again." }, 403);
+    return json({ error: "Verification failed. Reload the page and try again." }, 403);
   }
 
   const country = request.headers.get("CF-IPCountry") || "unknown";
