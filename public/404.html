@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en-NZ">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page not found | privatechef.co.nz</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#0E1A14">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230E1A14'/><circle cx='16' cy='16' r='5' fill='%23C8A25C'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..600,0..100,0..1&family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    >
+    <style>
+      :root {
+        color-scheme: dark;
+        --ground: #0e1a14;
+        --ivory: #f2efe6;
+        --muted: #9aa69c;
+        --brass: #c8a25c;
+        --display: "Fraunces", Georgia, serif;
+        --body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+        --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+      }
+
+      * { box-sizing: border-box; }
+
+      ::selection { background: var(--brass); color: #10190f; }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 40px;
+        background-color: var(--ground);
+        background-image:
+          radial-gradient(60rem 40rem at 12% -10%, rgba(200, 162, 92, 0.09), transparent 60%),
+          radial-gradient(50rem 40rem at 100% 110%, rgba(120, 180, 140, 0.08), transparent 62%);
+        color: var(--ivory);
+        font-family: var(--body);
+        line-height: 1.55;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .frame {
+        position: fixed;
+        inset: 14px;
+        border: 1px solid rgba(200, 162, 92, 0.22);
+        border-radius: 3px;
+        pointer-events: none;
+      }
+
+      .code {
+        margin: 0 0 18px;
+        color: var(--brass);
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 16ch;
+        margin: 0 auto;
+        font-family: var(--display);
+        font-size: clamp(38px, 7vw, 68px);
+        font-weight: 300;
+        font-variation-settings: "opsz" 144, "SOFT" 24, "WONK" 1;
+        line-height: 0.95;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        max-width: 42ch;
+        margin: 20px auto 0;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      a.back {
+        display: inline-flex;
+        align-items: center;
+        min-height: 46px;
+        margin-top: 28px;
+        border-radius: 3px;
+        padding: 12px 26px;
+        background: var(--brass);
+        color: #10190f;
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background-color 0.16s ease;
+      }
+
+      a.back:hover { background: #d8b473; }
+
+      a.back:focus-visible {
+        outline: 2px solid var(--brass);
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 520px) {
+        .frame { inset: 9px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame" aria-hidden="true"></div>
+    <div>
+      <p class="code">Error 404</p>
+      <h1>Nothing on this plate</h1>
+      <p>
+        That page doesn't exist. The domains are still for sale though — head back to the front
+        page for the details.
+      </p>
+      <a class="back" href="/">Back to the page</a>
+    </div>
+  </body>
+</html>
